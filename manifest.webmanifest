@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "IMPOSTER — Trust No One",
+  "short_name": "IMPOSTER",
+  "description": "A multiplayer social deception game. Trust no one. Believe nothing.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#171614",
+  "theme_color": "#171614",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    {
+      "src": "/icons/imposter.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

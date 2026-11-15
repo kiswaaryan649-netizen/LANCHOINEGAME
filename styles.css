@@ -1,0 +1,279 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #171614;
+  color: #f2eee8;
+  --red: #a94750;
+  --panel: #211f1d;
+  --line: #393530;
+  --muted: #aaa39a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #171614;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+.hidden { display: none !important; }
+
+.topbar {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 max(20px, calc((100% - 900px) / 2));
+  border-bottom: 1px solid var(--line);
+  background: #171614;
+}
+
+.brand, .topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--red);
+}
+
+.player-name {
+  max-width: 42vw;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.install-button, .button {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.install-button {
+  min-height: 38px;
+  padding: 0 12px;
+  background: #302d29;
+  font-size: 0.68rem;
+}
+
+main {
+  width: min(100% - 32px, 760px);
+  margin: 0 auto;
+  padding: 36px 0 max(24px, env(safe-area-inset-bottom));
+}
+
+.home-screen {
+  width: min(100%, 430px);
+  margin: clamp(42px, 13vh, 130px) auto 0;
+  text-align: center;
+}
+
+.player-setup {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.player-setup label {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.player-setup input,
+.player-setup select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  outline: none;
+  background: #211f1d;
+  color: #f2eee8;
+  font-size: 16px;
+}
+
+.player-setup input:focus,
+.player-setup select:focus,
+.join-form input:focus,
+.chat-form input:focus {
+  border-color: #9c6668;
+}
+
+h1 {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  letter-spacing: -0.06em;
+}
+
+.home-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.button-primary {
+  border-color: transparent;
+  background: var(--red);
+}
+
+.button-primary:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.button-secondary {
+  background: #302d29;
+}
+
+.button-quiet {
+  background: transparent;
+  color: #aaa;
+}
+
+.join-form, .chat-form {
+  display: flex;
+  gap: 8px;
+}
+
+.join-form input, .chat-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  outline: none;
+  background: #211f1d;
+  color: #f2eee8;
+  font-size: 16px;
+}
+
+.join-form input { text-align: center; letter-spacing: 0.14em; }
+.hint { margin: 14px 0 0; color: var(--muted); font-size: 0.85rem; }
+
+.room-screen { display: grid; gap: 14px; }
+.room-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.room-meta { display: flex; align-items: baseline; gap: 10px; color: var(--muted); }
+.room-meta strong { color: #fff; font-size: 1.15rem; letter-spacing: 0.13em; }
+.room-meta span { font-size: 0.85rem; }
+.room-heading .button { min-height: 40px; }
+
+.game-panel, .panel {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.game-panel { padding: 18px; text-align: center; }
+.identity-card {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 20px;
+  border: 1px solid #6f4143;
+  border-radius: 9px;
+  background: #302321;
+}
+
+.identity-card span { color: #c5b9b1; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; }
+.identity-card strong { font-size: clamp(2rem, 8vw, 3rem); }
+.timer-display { margin: 8px 0 14px; font-size: clamp(1.35rem, 6vw, 2rem); font-weight: 900; }
+.room-actions { display: flex; justify-content: center; gap: 8px; }
+
+.game-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.panel { min-width: 0; padding: 16px; }
+.panel h2 { display: flex; justify-content: space-between; margin: 0 0 12px; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.12em; }
+.player-list { display: grid; gap: 8px; }
+.player-row {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px;
+  border-radius: 10px;
+  background: #2a2825;
+}
+
+.player-avatar {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #4a3835;
+  color: #f1e4dc;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.player-label { min-width: 0; flex: 1; overflow-wrap: anywhere; font-size: 0.88rem; }
+.player-label small { color: var(--muted); font-size: 0.58rem; }
+.role-tag, .eliminated { color: #cf8585; font-size: 0.6rem; font-weight: 800; }
+.vote-button { min-height: 38px; padding: 0 10px; border: 1px solid #644144; border-radius: 8px; background: #38282a; color: #f2eee8; font-size: 0.62rem; }
+.vote-button:disabled { opacity: 0.55; }
+
+.chat-window { display: flex; min-height: 80px; max-height: 260px; flex-direction: column; gap: 8px; overflow-y: auto; margin-bottom: 10px; }
+.chat-message { overflow-wrap: anywhere; color: #d7d1c9; font-size: 0.84rem; line-height: 1.4; }
+.chat-message strong { color: #fff; }
+.chat-form .button { min-height: 42px; padding: 0 12px; font-size: 0.68rem; }
+
+.toast {
+  position: fixed;
+  z-index: 5;
+  right: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  left: 16px;
+  width: fit-content;
+  max-width: calc(100vw - 32px);
+  margin: auto;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #302d29;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .topbar { height: 58px; padding: 0 14px; }
+  main { width: calc(100% - 24px); padding-top: 20px; }
+  .home-screen { margin-top: clamp(46px, 12vh, 100px); }
+  .room-screen { gap: 10px; }
+  .game-columns { grid-template-columns: 1fr; }
+  .game-panel, .panel { padding: 14px; }
+  .room-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .room-actions .button { padding: 0 10px; font-size: 0.7rem; }
+  .room-actions .button-quiet { grid-column: 1 / -1; min-height: 38px; }
+  .player-row { padding: 8px; }
+  .chat-window { max-height: 26vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
